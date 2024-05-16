@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/">Waste Classification Using Deep Learning</a>
+        </div>
+    </nav>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Make Another Prediction</a>
+            </div>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/11.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Trash</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="mt-5"></div>
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Introduction</h1>
+                    <p>Trash waste, a ubiquitous byproduct of human activity, poses a pressing environmental challenge worldwide. As populations burgeon and consumerism thrives, landfills swell with an array of discarded materials, from plastics to organic matter. The repercussions are manifold: pollution of air, soil, and water; habitat destruction; and threats to wildlife. Moreover, the decomposition of organic waste releases methane, a potent greenhouse gas exacerbating climate change. Addressing this issue demands a multi-faceted approach, including waste reduction, recycling initiatives, and sustainable consumption practices. Heightened awareness and concerted efforts toward waste management are imperative to mitigate the detrimental impacts of trash accumulation on our planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts about Glass Waste Section -->
+    <section id="facts_about_glass_waste">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts about Glass Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Statistics on Glass Consumption and Waste Generation</h3>
+                            <p>Trash consumption and waste generation are global challenges, with projections indicating a doubling of waste by 2050, according to the World Bank. Disparities persist between high and low-income countries, with individuals in high-income nations producing 1.4 kg of waste per day compared to 0.5 kg in low-income nations. Plastic waste remains critical, with only 9% of the 300 million tonnes produced annually being recycled. Additionally, one-third of all food produced for human consumption is lost or wasted annually, amounting to 1.3 billion tonnes. The Global E-waste Monitor highlights the pressing challenge of electronic waste, with 53.6 million tonnes generated in 2019 and only 17.4% recycled.</p>
+                        </li>
+                        <li>
+                            <h3>Environmental Consequences of Glass Waste</h3>
+                            <p>Trash waste precipitates dire environmental consequences, compounding the urgency for effective waste management. Overflowing landfills emit methane, a potent greenhouse gas, intensifying global warming. Plastic debris, rampant in oceans and ecosystems, imperils marine life and contaminates water sources, posing enduring ecological hazards. Decomposing organic waste produces leachate, polluting soil and groundwater with toxic compounds. Deforestation, driven by landfill expansion and resource extraction, exacerbates habitat loss and biodiversity decline. Furthermore, improper waste disposal fuels air and water pollution, endangering both human health and ecosystem resilience.</p>
+                        </li>
+                        <li>
+                            <h3>Benefits of Recycling Glass</h3>
+                            <p>Recycling trash waste yields multifaceted benefits, contributing significantly to environmental sustainability and resource conservation. By diverting waste from landfills, recycling reduces greenhouse gas emissions and alleviates pressure on finite natural resources. Additionally, it conserves energy, as manufacturing products from recycled materials typically requires less energy than producing them from raw materials. Furthermore, recycling fosters job creation and economic growth by stimulating industries centred around waste collection, sorting, and processing. Embracing recycling initiatives not only mitigates environmental degradation but also promotes a circular economy, wherein materials are reused and repurposed, fostering a more resilient and resource-efficient society.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques for Managing Glass Waste Section -->
+    <section id="techniques_for_managing_glass_waste">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Glass Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>An Overview of the Glass Recycling Process</h3>
+                            <p>Trash recycling involves several key steps to transform waste materials into reusable resources. Initially, collected recyclables undergo sorting, separating materials like paper, plastics, glass, and metals. Next, these sorted materials are cleaned and processed to remove contaminants and prepare them for reprocessing. Then, the recycled materials are converted into raw materials through various methods such as shredding, melting, or pulping, depending on the material type. Finally, these raw materials are used to manufacture new products, closing the loop of the recycling process. This process not only conserves natural resources but also reduces energy consumption and minimizes landfill waste, promoting environmental sustainability.</p>
+                        </li>
+                        <li>
+                            <h3>Advantages of Reusing Glass</h3>
+                            <p>The benefit of reusing trash lies in its ability to extend the lifespan of materials, thereby reducing the demand for new resources and minimizing waste. By repurposing items instead of discarding them, reusing conserves energy and natural resources required for manufacturing new products. Additionally, reusing helps mitigate environmental pollution associated with the production and disposal of goods. Furthermore, it promotes creativity and innovation, as items are given new purposes and transformed into unique creations.</p>
+                        </li>
+                        <li>
+                            <h3>Compost Glass as an Alternative Disposal Method</h3>
+                            <p>Composting trash serves as an eco-conscious disposal method, particularly for organic waste like food scraps and yard trimmings. By diverting these materials from landfills, composting reduces methane emissions and enriches soil health. The nutrient-rich compost produced enhances soil fertility, fostering plant growth and biodiversity while conserving water through improved moisture retention. Additionally, composting minimizes the need for chemical fertilizers, mitigating water pollution. Beyond its environmental benefits, composting encourages community involvement and education, promoting sustainable living practices and contributing to a circular economy where waste becomes a valuable resource.</p>
+                        </li>
+                        <li>
+                            <h3>Solutions for Reducing Glass Waste with Smart Packaging</h3>
+                            <p>Smart packaging offers innovative solutions for reducing trash waste by optimizing material use and enhancing recyclability. Utilizing eco-friendly materials, such as biodegradable plastics or recyclable alternatives, minimizes environmental impact. Additionally, implementing intelligent packaging designs, like portion-controlled servings or resealable options, reduces food waste. Furthermore, incorporating digital technologies, such as QR codes for recycling instructions, enhances consumer awareness and participation in recycling efforts. By integrating these strategies, smart packaging not only reduces trash waste but also promotes sustainability throughout the product lifecycle.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best_practices">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices</h2>
+                    <ol>
+                        <li>
+                            <h3>Tips and Suggestions for Individuals and Businesses on Effective Glass Waste Management</h3>
+                            <p>Reduce consumption: Minimize purchases and opt for products with minimal packaging. Reuse items: Repurpose or donate items instead of throwing them away. Recycle materials: Sort and recycle paper, plastics, glass, and metals properly. Compost organic waste: Start composting food scraps and yard waste to create nutrient-rich soil. Educate stakeholders: Provide training and resources to employees and community members on waste reduction. Monitor waste: Regularly track and analyze waste generation to identify areas for improvement. Collaborate with partners: Work with local organizations and businesses to implement innovative waste management solutions.</p>
+                        </li>
+                        <li>
+                            <h3>Examples of Sustainable Practices for Reducing, Reusing, and Recycling Glass</h3>
+                            <p>Reducing: Encourage the use of refillable glass containers for beverages like milk or juices, reducing the need for single-use glass bottles. Reusing: Implement a bottle return system where customers can return empty glass containers for cleaning and reuse, reducing the demand for new bottles. Recycling: Partner with local recycling facilities to ensure that all glass waste is properly sorted and recycled into new glass products. Collaboration: Collaborate with other businesses in the community to establish a centralized glass recycling program, pooling resources and infrastructure to make glass recycling more accessible and efficient for everyone.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, the reduction, recycling, and reusing of trash offer critical avenues for addressing the global waste crisis. By reducing consumption, individuals and businesses can minimize the generation of waste at its source, thereby mitigating environmental impacts and conserving valuable resources. Additionally, recycling materials diverts waste from landfills, conserves energy, and reduces greenhouse gas emissions, contributing to a more sustainable future. Moreover, reusing items prolongs their lifespan, reduces the need for new products, and promotes a circular economy where materials are reused and repurposed. Together, these approaches form the cornerstone of effective waste management, fostering environmental stewardship and promoting a healthier planet for generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Links Section -->
+    <section id="external_links">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>External Links</h2>
+                    <ul>
+                        <li><a href="https://www.rts.com">What is sustainable waste management? - Recycle Track Systems</a></li>
+                        <li><a href="https://www.unep.org">Global Waste Management Outlook 2024 | UNEP - UN Environment Programme</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

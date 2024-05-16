@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Make Another Prediction</a>
+            </div>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/7.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Glass Waste</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="mt-5"></div>
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Introduction</h2>
+                    <p>Glass waste refers to discarded glass products from a variety of sources, including residences,
+                        factories, and commercial enterprises. The significance of glass waste stems from its
+                        environmental effect and resource depletion. Glass takes a long time to degrade in landfills,
+                        increasing waste and pollution. Furthermore, the manufacture of glass necessitates large amounts
+                        of energy and raw resources, such as sand, soda ash, and limestone, resulting in resource
+                        depletion and environmental deterioration. Effective handling of glass trash is critical for
+                        minimising pollution, preserving resources, and fostering sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts About Glass Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Statistics on Glass Consumption and Waste Generation</h3>
+                            <p>These statistics give quantifiable data on the quantity of glass used and rubbish
+                                produced. This might include numbers like total yearly glass production, glass waste
+                                generation, and per capita consumption rates. Understanding these figures allows us to
+                                determine the scope of the problem and develop effective methods for minimising glass
+                                trash.</p>
+                        </li>
+                        <li>
+                            <h3>Environmental Consequences of Glass Waste</h3>
+                            <p>Glass waste poses several environmental consequences. When disposed of in landfills,
+                                glass takes hundreds or even thousands of years to decompose, occupying valuable
+                                landfill space and contributing to environmental pollution. Moreover, the production of
+                                new glass from raw materials requires significant energy consumption and resource
+                                extraction, leading to greenhouse gas emissions, habitat destruction, and depletion of
+                                natural resources. Additionally, improper disposal of glass waste, such as littering,
+                                can harm wildlife and ecosystems.</p>
+                        </li>
+                        <li>
+                            <h3>Benefits of Recycling Glass</h3>
+                            <p>Recycling glass allows us to conserve natural resources, cut energy usage, and minimise
+                                greenhouse gas emissions when compared to manufacturing new glass from raw materials.
+                                Furthermore, recycling glass helps to limit the quantity of garbage transported to
+                                landfills, which saves landfill space and reduces environmental pollution. Furthermore,
+                                recycled glass may be used to make a wide range of products, including new glass
+                                containers, construction materials, and ornamental objects, so creating economic
+                                possibilities and promoting sustainable development.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniques">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Glass Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>An Overview of the Glass Recycling Process</h3>
+                            <p>Glass recycling include collecting, sorting, cleaning, and converting glass trash into
+                                new goods. Collected glass is sorted by colour, cleaned to eliminate pollutants, crushed
+                                into cullet, and melted to make new glass products. This procedure uses less energy and
+                                raw resources than making glass from scratch.</p>
+                        </li>
+                        <li>
+                            <h3>Advantages of Reusing Glass</h3>
+                            <p>Reusing glass containers and goods minimises the demand for new glass manufacture, which
+                                saves energy and materials. It also reduces trash output and landfill use, which
+                                contributes to environmental sustainability. Furthermore, glass containers may be reused
+                                numerous times without losing quality, making them a cost-effective and environmentally
+                                responsible choice.</p>
+                        </li>
+                        <li>
+                            <h3>Composting Glass as an Alternative Disposal Method</h3>
+                            <p>Composting glass entails breaking down glass debris into small bits and putting it into
+                                the composting process. While glass does not degrade as organic matter, finely broken
+                                glass can improve aeration and drainage in compost piles. Large shards of glass, on the
+                                other hand, may not decompose entirely and may cause problems in composting systems.</p>
+                        </li>
+                        <li>
+                            <h3>Solutions for Reducing Glass Waste with Smart Packaging</h3>
+                            <p>Smart packaging solutions seek to reduce glass waste by optimising package design and
+                                materials. This involves employing lightweight glass containers, developing packaging
+                                that is easily recyclable, and encouraging refillable or returnable bottle systems.
+                                Furthermore, novel packaging options, such as biodegradable packaging materials or
+                                alternate packaging designs, may assist lessen the environmental effect of glass
+                                containers.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices</h2>
+                    <ol>
+                        <li>
+                            <h3>Tips and Suggestions for Individuals and Businesses on Effective Glass Waste Management
+                            </h3>
+                            <p>- Separate glass trash from other recyclables for effective recycling.
+                                - Encourage local recycling programmes and efforts.
+                                - Select items with minimum or reusable glass packaging.
+                                - Consider bulk purchase to decrease single-use glass waste.
+                                - Encourage reuse by recycling glass containers as storage or crafts.
+                                - Educate employees or family members on the significance of appropriate glass trash
+                                management.</p>
+                        </li>
+                        <li>
+                            <h3>Examples of Sustainable Practices for Reducing, Reusing, and Recycling Glass</h3>
+                            <ol type="a">
+                                <li>Reducing: Select products with limited or reusable glass packaging, and minimise
+                                    single-use items.</li>
+                                <li>Reusing: Reuse glass containers for storage, crafts, and DIY projects. Choose
+                                    refillable or returnable glass bottle systems.</li>
+                                <li>Recycling: Sort glass garbage properly and support local glass recycling programmes.
+                                    Choose items created from recycled glass to help finish the recycling loop and
+                                    promote a circular economy.</li>
+                                <li>Collaboration: Collaborating with local companies to create glass recycling
+                                    programmes and promoting innovative glass waste management solutions.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>The key points discussed emphasize the importance of responsible glass waste management for
+                        environmental sustainability:</p>
+                    <ol>
+                        <li>Glass waste poses significant environmental consequences, including long-term landfill
+                            accumulation, resource depletion, and greenhouse gas emissions.</li>
+                        <li>Recycling glass offers numerous benefits, including resource conservation, energy savings,
+                            and reduction of landfill usage.</li>
+                        <li>Reusing glass containers and products reduces the need for new production, conserving
+                            resources and minimizing waste generation.</li>
+                        <li>Alternative disposal methods, such as composting glass, may provide additional options for
+                            managing glass waste sustainably.</li>
+                        <li>Strategies for reducing glass waste through smart packaging design and innovative solutions
+                            can further minimize the environmental impact of glass consumption.</li>
+                    </ol>
+                    <p>Overall, responsible glass waste management is crucial for preserving natural resources, reducing
+                        environmental pollution, and promoting a sustainable future for generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Links Section -->
+    <section id="external-links">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>External Links</h2>
+                    <ul>
+                        <li><a href="https://www.sciencedirect.com/topics/engineering/waste-glass">Waste Glass - an
+                                overview | ScienceDirect Topics</a></li>
+                        <li><a
+                                href="https://www.epa.gov/facts-and-figures-about-materials-waste-and-recycling/glass-material-specific-data">Glass:
+                                Material-Specific Data | US EPA</a></li>
+                        <li><a href="https://sarahbassett.co/why-glass-is-bad-for-the-environment">Is glass sustainable?
+                                Why glass is BAD for the environment (sarahbassett.co)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

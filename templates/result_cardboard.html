@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+        max-height: 500px;
+        overflow: hidden;
+        position: relative;
+    }
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/">Waste Classification Using Deep Learning</a>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/6.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Cardboard Waste</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- content -->
+    <!-- Introduction Section -->
+    <div class="mt-5"></div>
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Introduction</h2>
+                    <p>Cardboard, a ubiquitous material derived from paper fibres, presents a unique facet of the
+                        broader issue of paper waste. Its production, intertwined with the paper industry, shares
+                        similar environmental concerns, including deforestation and resource-intensive processes. Like
+                        paper, cardboard contributes to habitat loss, biodiversity decline, and environmental
+                        degradation. Moreover, its improper disposal compounds these challenges, filling landfills and
+                        emitting harmful greenhouse gases. Beyond its environmental implications, cardboard waste
+                        imposes economic burdens through resource costs and waste management expenses. Socially, it can
+                        pose health risks and necessitate community awareness campaigns. Addressing the challenges posed
+                        by cardboard waste requires concerted efforts to promote sustainable practices, such as reducing
+                        consumption, fostering recycling initiatives, and embracing a circular economy mindset.
+                        Collaboration among individuals, businesses, and policymakers is imperative to mitigate the
+                        adverse effects of cardboard waste and safeguard the environment for future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts About Cardboard Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Statistics on Cardboard Consumption and Waste Generation</h3>
+                            <p>Cardboard, a prevalent form of paper packaging, contributes significantly to global paper
+                                consumption and waste generation. On average, an individual utilizes around 40 kilograms
+                                of cardboard annually. In the United States alone, where cardboard usage is prolific in
+                                packaging and shipping industries, each person generates approximately 100 pounds of
+                                cardboard waste per year. These figures highlight the substantial role of cardboard in
+                                the broader issue of paper waste, emphasizing the urgency to address its consumption and
+                                disposal patterns.</p>
+                        </li>
+                        <li>
+                            <h3>Environmental Consequences of Cardboard Waste</h3>
+                            <p>Cardboard waste shares many environmental consequences with paper waste due to its origin
+                                from paper fibres. The production of cardboard contributes to deforestation, as forests
+                                are cleared to meet the demand for packaging materials. Moreover, the manufacturing
+                                processes involved in cardboard production release pollutants into the environment,
+                                contributing to air, water, and soil pollution. Like paper, cardboard decomposition in
+                                landfills produces methane gas, a potent greenhouse gas that contributes to climate
+                                change. These environmental impacts underscore the importance of implementing
+                                sustainable practices to manage cardboard waste effectively.</p>
+                        </li>
+                        <li>
+                            <h3>Benefits of Recycling Cardboard</h3>
+                            <p>Recycling cardboard presents significant environmental and economic benefits. Recycling
+                                one ton of cardboard saves approximately 17 trees and conserves considerable amounts of
+                                water and oil. Moreover, recycled cardboard requires less energy to process compared to
+                                cardboard produced from virgin sources, leading to reduced greenhouse gas emissions and
+                                energy consumption. Additionally, recycling cardboard supports the circular economy by
+                                diverting waste from landfills and promoting resource conservation. Embracing recycling
+                                initiatives for cardboard is essential for mitigating its environmental impact,
+                                promoting sustainability, and fostering a more efficient use of resources.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniques">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Cardboard Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>An Overview of the Cardboard Recycling Process</h3>
+                            <p>Understanding the cardboard recycling process is fundamental to effective cardboard waste
+                                management. It typically commences with collection, where cardboard waste is gathered
+                                and sorted according to its type and quality. Subsequently, the sorted cardboard
+                                undergoes a pulping stage, where it is mixed with water and chemicals to break it down
+                                into fibres. The resultant pulp is then cleaned, refined, and formed into new cardboard
+                                sheets, primed for reuse. Recycling cardboard significantly diminishes the necessity for
+                                virgin materials, conserving natural resources, and reducing environmental impact.
+                                Raising awareness about this recycling cycle can motivate individuals and businesses to
+                                actively participate in recycling endeavours, fostering a more sustainable approach to
+                                cardboard consumption.</p>
+                        </li>
+                        <li>
+                            <h3>Advantages of Reusing Cardboard</h3>
+                            <p>Reusing cardboard presents a simple yet effective method for managing cardboard waste.
+                                Encouraging the reuse of cardboard packaging, such as through repurposing boxes for
+                                storage or shipping, extends the lifespan of cardboard products. This not only curtails
+                                the demand for fresh cardboard but also lessens the volume of cardboard headed for
+                                recycling or landfill. Embracing a culture of reuse not only preserves resources but
+                                also yields cost savings and environmental benefits, making it a practical and
+                                accessible solution for managing cardboard waste across various contexts.</p>
+                        </li>
+                        <li>
+                            <h3>Composting Cardboard as an Alternative Disposal Method</h3>
+                            <p>Composting cardboard offers an eco-friendly alternative to conventional disposal
+                                techniques. Certain types of cardboard, such as uncoated and non-toxic varieties, can be
+                                composted alongside organic waste. Within a controlled composting environment, cardboard
+                                breaks down into organic matter, enriching the compost with valuable nutrients. This
+                                approach diverts cardboard from landfills and contributes to the creation of
+                                nutrient-rich soil amendments. Educating individuals and communities about the
+                                composting potential of specific cardboard products can foster a more sustainable and
+                                holistic approach to cardboard waste disposal, aligning with broader initiatives to
+                                minimize environmental impact.</p>
+                        </li>
+                        <li>
+                            <h3>Solutions for Reducing Cardboard Waste with Smart Packaging</h3>
+                            <p>Innovative packaging solutions play a pivotal role in reducing cardboard waste. Smart
+                                packaging technologies, including minimalist and eco-friendly designs, facilitate the
+                                efficient use of materials, minimizing unnecessary packaging. Incorporating
+                                biodegradable and recyclable materials in packaging further diminishes environmental
+                                impact. Digital alternatives, such as QR codes and digital labels, offer substitutes for
+                                excessive paper documentation in cardboard packaging. Implementing these smart packaging
+                                strategies not only addresses the issue of excessive cardboard use but also enhances
+                                overall sustainability in product delivery and consumption, epitomizing a modern and
+                                responsible approach to cardboard waste management.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices</h2>
+                    <ol>
+                        <li>
+                            <h3>Tips and Suggestions for Individuals and Businesses on Effective Cardboard Waste
+                                Management</h3>
+                            <p>Managing cardboard waste effectively entails adopting practical strategies for both
+                                individuals and businesses. Firstly, transitioning to digital alternatives for packaging
+                                and communication can significantly reduce cardboard consumption. Utilizing reusable
+                                shipping materials and optimizing packaging design to minimize excess cardboard usage
+                                further mitigates waste. Implementing a cardboard recycling program within businesses
+                                encourages responsible disposal practices, and collaborating with local recycling
+                                facilities ensures proper processing. Businesses can explore alternatives to traditional
+                                cardboard packaging, such as biodegradable or compostable materials, to minimize
+                                environmental impact. Additionally, fostering a culture of sustainability awareness
+                                among employees promotes collective efforts to reduce cardboard waste. Individuals can
+                                contribute by reusing cardboard boxes for storage or shipping, participating in
+                                community recycling programs, and advocating for sustainable packaging options when
+                                making purchasing decisions. By implementing these practices, both individuals and
+                                businesses can contribute to a more eco-friendly and responsible approach to cardboard
+                                waste management.</p>
+                        </li>
+                        <li>
+                            <h3>Examples of Sustainable Practices for Reducing, Reusing, and Recycling Cardboard</h3>
+                            <ol type="a">
+                                <li>Reducing: Encouraging the use of minimalistic and eco-friendly packaging designs to
+                                    minimize cardboard consumption.</li>
+                                <li>Reusing: Repurposing cardboard boxes for storage or shipping purposes extends their
+                                    lifespan and reduces the need for new packaging materials.</li>
+                                <li>Recycling: Sorting cardboard waste into designated recycling bins and ensuring it is
+                                    collected by local recycling facilities for proper processing.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, managing cardboard waste effectively is a multifaceted endeavour that requires
+                        collective action and innovative solutions. Despite its prevalence as a packaging material,
+                        cardboard waste presents significant environmental, economic, and social challenges. However,
+                        through awareness, education, and the adoption of sustainable practices, individuals,
+                        businesses, and policymakers can address these challenges and work towards a more sustainable
+                        future. By implementing techniques such as recycling, reusing, composting, and embracing smart
+                        packaging solutions, we can minimize the environmental impact of cardboard waste while promoting
+                        resource conservation and advancing towards a circular economy. Together, let us commit to
+                        reducing cardboard waste, safeguarding our environment, and creating a healthier planet for
+                        generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

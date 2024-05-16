@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/">Waste Classification Using Deep Learning</a>
+        </div>
+    </nav>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Make Another Prediction</a>
+            </div>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/10.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Plastic Waste</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="mt-5"></div>
+    <!-- Introduction Section -->
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Introduction</h1>
+                    <p>An innovative platform leveraging machine learning (ML), CNN reporting, and Flask to tackle the critical issue of plastic wastage. Our website provides comprehensive insights into the significance of plastic waste and empowers users to take proactive measures to address this pressing environmental challenge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Understanding Plastic Wastage Section -->
+    <section id="understanding_plastic_wastage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Understanding Plastic Wastage</h2>
+                    <p>Plastic waste has emerged as a global crisis, with detrimental impacts on ecosystems, wildlife, and human health. Through ML algorithms trained on CNN’s extensive coverage, our platform extracts and synthesizes pertinent information on plastic wastage, offering users a nuanced understanding of the issue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Significance of Plastic Wastage Section -->
+    <section id="significance_of_plastic_wastage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Significance of Plastic Wastage</h2>
+                    <ol>
+                        <li>
+                            <h3>Environmental Degradation</h3>
+                            <p>ML-driven analysis of CNN reports reveals the pervasive nature of plastic pollution, highlighting its devastating effects on the environment. Plastic debris contaminates land, water bodies, and air, disrupting fragile ecosystems and endangering biodiversity. From plastic-laden beaches to microplastic pollution in remote wilderness areas, the environmental degradation caused by plastic wastage underscores the urgency of action.</p>
+                        </li>
+                        <li>
+                            <h3>Threat to Marine Life</h3>
+                            <p>Our ML-powered platform showcases the impact of plastic waste on marine ecosystems, drawing from CNN's in-depth investigations. Marine animals, from sea turtles to seabirds, are at risk of entanglement, ingestion, and suffocation due to discarded plastic debris. Through interactive visualizations and multimedia content, users gain insights into the dire consequences of plastic pollution for marine biodiversity and ecosystem health.</p>
+                        </li>
+                        <li>
+                            <h3>Human Health Risks</h3>
+                            <p>ML algorithms analyze CNN Health reports to elucidate the potential health risks associated with plastic wastage. Chemicals leaching from plastics, such as BPA and phthalates, pose risks to human health, including hormonal disruptions and reproductive disorders. By illuminating the link between environmental pollution and public health, our platform emphasizes the need for comprehensive strategies to mitigate plastic pollution and safeguard human well-being.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empowering Action Through Flask Section -->
+    <section id="empowering_action_through_flask">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Empowering Action Through Flask</h2>
+                    <p>Powered by Flask, our website offers users actionable steps to combat plastic wastage and promote sustainability:</p>
+                    <ul>
+                        <li>Educational Resources: Access curated articles, infographics, and videos that educate users on the impacts of plastic pollution and advocate for sustainable alternatives.</li>
+                        <li>Community Engagement: Participate in forums, discussions, and collaborative initiatives with like-minded individuals and organizations committed to environmental conservation.</li>
+                        <li>Advocacy and Policy Change: Learn how to advocate for policy reforms, support plastic-free initiatives, and mobilize communities to effect positive change at local and global levels.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts about Plastic Waste Section -->
+    <section id="facts_about_plastic_waste">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts about Plastic Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Global Production</h3>
+                            <p>More than 380 million tons of plastic are produced annually worldwide, with production expected to continue rising.</p>
+                        </li>
+                        <li>
+                            <h3>Single-Use Plastics</h3>
+                            <p>Single-use plastics, such as bottles, bags, and packaging, constitute a significant portion of plastic waste.</p>
+                        </li>
+                        <li>
+                            <h3>Recycling Challenges</h3>
+                            <p>Despite efforts to increase recycling rates, only a small fraction of plastic waste is recycled globally.</p>
+                        </li>
+                        <li>
+                            <h3>Microplastics Pollution</h3>
+                            <p>Microplastics, tiny plastic particles less than 5 millimeters in size, are ubiquitous in the environment.</p>
+                        </li>
+                        <li>
+                            <h3>Ocean Pollution</h3>
+                            <p>An estimated 8 million tons of plastic waste enter the oceans every year.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques for Managing Plastic Waste Section -->
+    <section id="techniques_for_managing_plastic_waste">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Plastic Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Recycling</h3>
+                            <p>Plastic waste can be recycled through various processes, including mechanical recycling, chemical recycling, and thermal recycling.</p>
+                        </li>
+                        <li>
+                            <h3>Reusing</h3>
+                            <p>Reusing plastic products or containers instead of disposing of them after a single use can help reduce plastic waste.</p>
+                        </li>
+                        <li>
+                            <h3>Composting</h3>
+                            <p>Composting certain types of biodegradable or compostable plastics offers an alternative disposal method that diverts plastic waste from landfills and reduces environmental pollution.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices for Managing Plastic Waste Section -->
+    <section id="best_practices_for_managing_plastic_waste">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices for Managing Plastic Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Reduce Plastic Usage</h3>
+                            <p>Use reusable water bottles, coffee cups, and shopping bags instead of single-use plastic alternatives.</p>
+                        </li>
+                        <li>
+                            <h3>Reuse Plastic Items</h3>
+                            <p>Repurpose plastic containers and packaging for storage or organization purposes.</p>
+                        </li>
+                        <li>
+                            <h3>Recycle Plastic</h3>
+                            <p>Participate in local recycling programs and ensure proper sorting and disposal of plastic waste.</p>
+                        </li>
+                        <li>
+                            <h3>Implement Circular Economy Practices</h3>
+                            <p>Encourage product manufacturers to adopt circular economy principles, such as designing products for durability, repairability, and recyclability.</p>
+                        </li>
+                        <li>
+                            <h3>Educate and Raise Awareness</h3>
+                            <p>Educate employees, customers, and community members about the environmental impact of plastic waste and the importance of reducing, reusing, and recycling plastics.</p>
+                        </li>
+                        <li>
+                            <h3>Innovate and Support Innovation</h3>
+                            <p>Invest in research and development of innovative plastic alternatives, such as biodegradable plastics, compostable packaging, and sustainable materials derived from renewable resources.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, we have examined the critical issue of plastic waste management and its profound implications for environmental sustainability. Here's a summary of the key points discussed:</p>
+                    <ol>
+                        <li>Magnitude of Plastic Waste</li>
+                        <li>Management Strategies</li>
+                        <li>Individual Responsibility</li>
+                        <li>Business Accountability</li>
+                        <li>Government Action</li>
+                    </ol>
+                    <p>Emphasis on Responsible Plastic Waste Management: Responsible plastic waste management is imperative for environmental sustainability. By reducing plastic pollution, we can protect ecosystems, conserve natural resources, and safeguard the health and well-being of future generations. It's essential for individuals, businesses, governments, and communities to work together to address the plastic waste crisis and transition towards a more sustainable and circular economy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+</body>
+
+</html>

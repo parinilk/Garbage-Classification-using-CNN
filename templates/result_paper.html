@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="/">Waste Classification Using Deep Learning</a>
+        </div>
+    </nav>
+
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Make Another Prediction</a>
+            </div>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/9.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Paper Waste</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="mt-5"></div>
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Introduction</h2>
+                    <p>Paper waste poses a significant environmental challenge with far-reaching consequences. The
+                        production of paper, often reliant on deforestation and intensive resource use, contributes to
+                        habitat loss, biodiversity decline, and environmental degradation. Improper disposal of paper
+                        waste further exacerbates the problem, leading to overflowing landfills and the release of
+                        harmful greenhouse gases. Beyond its environmental impact, paper waste carries economic burdens
+                        in terms of resource costs and waste management expenses. Socially, it can pose health risks and
+                        necessitate community awareness. Implementing sustainable practices such as reducing
+                        consumption, promoting recycling programs, and embracing a circular economy is crucial for
+                        mitigating the adverse effects of paper waste, requiring collective efforts from individuals,
+                        businesses, and policymakers alike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts About Paper Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Statistics on Paper Consumption and Waste Generation</h3>
+                            <p>Global paper consumption remains staggering, with the average person utilizing
+                                approximately 200 kilograms of paper annually. Particularly concerning is the
+                                disproportionate paper usage in the United States, where only 5% of the world's
+                                population accounts for nearly 30% of the world's paper consumption. In the U.S., each
+                                individual generates an estimated 700 pounds of paper waste yearly, contributing
+                                significantly to the growing issue of municipal solid waste. These statistics underscore
+                                the urgent need for awareness and action to curb excessive paper consumption and manage
+                                waste effectively.</p>
+                        </li>
+                        <li>
+                            <h3>Environmental Consequences of Paper Waste</h3>
+                            <p>The environmental toll of paper waste is profound and multifaceted. Deforestation, driven
+                                by the demand for paper production, results in the loss of approximately 4 billion trees
+                                each year. The pulp and paper industry, one of the largest industrial contributors to
+                                pollution, releases various contaminants into the air, water, and soil during
+                                manufacturing processes. Beyond these concerns, the decomposition of paper in landfills
+                                produces methane, a potent greenhouse gas that exacerbates climate change. Collectively,
+                                these consequences emphasize the imperative to address the environmental impact of paper
+                                waste through sustainable practices and responsible consumption.</p>
+                        </li>
+                        <li>
+                            <h3>Benefits of Recycling Paper</h3>
+                            <p>Amidst the challenges posed by paper waste, recycling emerges as a powerful solution with
+                                numerous environmental and economic benefits. Recycling one ton of paper not only saves
+                                approximately 17 trees but also conserves 7,000 gallons of water and 463 gallons of oil.
+                                The energy savings are significant, with recycled paper requiring up to 60% less energy
+                                compared to paper produced from virgin sources. Additionally, the recycling process
+                                generates fewer pollutants, contributing to a cleaner environment. Recycling paper not
+                                only fosters resource conservation but also supports job creation in the recycling
+                                industry. Embracing recycling practices is fundamental to mitigating the environmental
+                                impact of paper waste, promoting sustainability, and moving towards a more circular
+                                economy.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniques">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Paper Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>An Overview of the Paper Recycling Process</h3>
+                            <p>Understanding the paper recycling process is crucial for effective paper waste
+                                management. The process typically begins with collection, where paper waste is gathered
+                                and sorted based on type and quality. After sorting, the paper undergoes a pulping
+                                stage, where it is mixed with water and chemicals to break it down into fibers. The pulp
+                                is then cleaned, refined, and formed into sheets, ready for reuse. The recycling process
+                                significantly reduces the need for virgin materials, conserving natural resources, and
+                                minimizing environmental impact. Promoting awareness of this cycle can encourage
+                                individuals and businesses to actively participate in recycling initiatives, fostering a
+                                more sustainable approach to paper consumption.</p>
+                        </li>
+                        <li>
+                            <h3>Advantages of Reusing Paper</h3>
+                            <p>Reusing paper offers a straightforward yet effective technique for managing paper waste.
+                                By encouraging the reuse of printed documents, such as through double-sided printing or
+                                utilizing the blank side of discarded paper for notes, individuals and organizations can
+                                extend the lifespan of paper products. This not only reduces the demand for new paper
+                                but also minimizes the amount of paper destined for recycling or landfill. Embracing a
+                                culture of reuse not only conserves resources but also contributes to cost savings and
+                                environmental sustainability, making it a practical and accessible solution for managing
+                                paper waste at various levels.</p>
+                        </li>
+                        <li>
+                            <h3>Compost Paper as an Alternative Disposal Method</h3>
+                            <p>Composting paper presents an environmentally friendly alternative to traditional disposal
+                                methods. Certain types of paper, such as uncoated and non-toxic materials, can be
+                                composted alongside organic waste. In a controlled composting environment, paper breaks
+                                down into organic matter, enriching the compost with valuable nutrients. This approach
+                                not only diverts paper from landfills but also contributes to the creation of
+                                nutrient-rich soil amendments. Educating individuals and communities about the
+                                composting potential of specific paper products can lead to a more sustainable and
+                                holistic approach to paper waste disposal, aligning with broader efforts to reduce
+                                environmental impact.</p>
+                        </li>
+                        <li>
+                            <h3>Solutions for Reducing Paper Waste with Smart Packaging</h3>
+                            <p>Innovative packaging solutions can play a pivotal role in reducing paper waste. Smart
+                                packaging technologies, such as minimalistic and eco-friendly designs, promote the
+                                efficient use of materials, minimizing unnecessary packaging. Additionally,
+                                incorporating biodegradable and recyclable materials in packaging contributes to the
+                                overall reduction of environmental impact. Digital solutions, like QR codes and digital
+                                labels, can replace excessive paper documentation in product packaging. Implementing
+                                these smart packaging strategies not only addresses the issue of excessive paper use but
+                                also enhances overall sustainability in product delivery and consumption, reflecting a
+                                modern and responsible approach to paper waste management.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices</h2>
+                    <ol>
+                        <li>
+                            <h3>Tips and Suggestions for Individuals and Businesses on Effective Paper Waste Management</h3>
+                            <p>Effective paper waste management is achievable through simple yet impactful practices for
+                                both individuals and businesses. Firstly, embracing digital documentation and
+                                communication can significantly reduce paper consumption. Utilizing double-sided
+                                printing and optimizing page layouts when necessary also minimizes paper usage.
+                                Implementing a paper recycling program within offices encourages responsible disposal,
+                                and partnering with local recycling facilities ensures proper processing. Businesses can
+                                adopt paperless billing and invoicing systems, reducing the need for physical paperwork.
+                                Additionally, promoting a culture of awareness and education on sustainable practices
+                                among employees fosters a collective commitment to minimizing paper waste. Individuals
+                                can contribute by using reusable shopping bags, opting for electronic receipts, and
+                                responsibly disposing of paper in designated recycling bins. These practices
+                                collectively contribute to a more eco-friendly and responsible approach to paper waste
+                                management.</p>
+                        </li>
+                        <li>
+                            <h3>Examples of Sustainable Practices for Reducing, Reusing, and Recycling Paper</h3>
+                            <ul>
+                                <li>Reducing: Through digital alternatives like e-books, e-statements, and online
+                                    documentation.</li>
+                                <li>Reusing: Printing on both sides or repurposing printed sheets for notes extends the
+                                    life of paper products.</li>
+                                <li>Recycling: Segregating paper waste into appropriate categories and ensuring it
+                                    reaches recycling facilities.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>In conclusion, responsible paper waste management emerges as a critical imperative for
+                        environmental sustainability. The staggering statistics on paper consumption and waste
+                        generation underscore the urgency of adopting effective measures at both individual and business
+                        levels. By understanding and actively participating in the paper recycling process, promoting
+                        the advantages of reusing paper, exploring composting alternatives, and embracing smart
+                        packaging solutions, we can significantly mitigate the environmental consequences of paper
+                        waste. Sustainable practices, such as reducing, reusing, and recycling paper, not only conserve
+                        precious natural resources but also contribute to reduced energy consumption, lowered greenhouse
+                        gas emissions, and minimized landfill impact. As individuals and businesses collectively
+                        implement these best practices, a transformative shift towards a more circular and responsible
+                        approach to paper consumption becomes possible. The intrinsic link between responsible paper
+                        waste management and environmental sustainability highlights the need for a shared commitment to
+                        fostering a healthier planet for current and future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+</body>
+
+</html>

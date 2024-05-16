@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+    <style>
+        .image-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Add a background color to the body element */
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Style the section elements with a padding and margin */
+        section {
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        /* Style the h2 elements with a bottom border */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the ul elements with bullet points and a margin */
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Style the li elements with a padding */
+        li {
+            padding: 10px 0;
+        }
+
+        /* Style the a elements with a hover effect */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style the table elements with a border-collapse and width */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        /* Style the th elements with a padding and border */
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Style the th elements with a background color and font weight */
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        /* Style the .highlight class with a background color */
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Make Another Prediction</a>
+            </div>
+        </div>
+    </nav>
+    <!-- image -->
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container position-relative">
+                    <img src="../static/8.jpg" class="img-fluid" alt="Full-width Image">
+                    <div class="text-center text-white position-absolute top-50 start-50 translate-middle">
+                        <h1>It's Metal Waste</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="mt-5"></div>
+    <section id="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Introduction</h2>
+                    <p>Metal waste refers to discarded metallic materials, such as steel, aluminium, copper, brass, and
+                        more, that are generated from various sources, including industries, construction, electronics,
+                        and automobiles. Effectively managing metal waste is critical for reducing pollution, conserving
+                        resources, and promoting a circular economy. This can be achieved through implementing recycling
+                        programs, sustainable consumption and production practices, and raising awareness among
+                        individuals and businesses alike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section id="facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Facts About Metal Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>Statistics on Metal Consumption and Waste Generation</h3>
+                            <p>The amount of metal consumed worldwide has been rising over time; 1.6 billion metric tons
+                                are thought to be consumed each year. This demand is mostly driven by the industrial,
+                                construction, automotive, and electronics sectors. But increased consumption is also
+                                accompanied by a sizable amount of metal trash production. Globally, 500 million metric
+                                tons of metal garbage are produced annually, which includes both industrial and
+                                post-consumer waste. A significant amount of this metal trash still ends up in
+                                landfills, leading to resource depletion and environmental damage even with attempts to
+                                enhance recycling rates.</p>
+                        </li>
+                        <li>
+                            <h3>Environmental Consequences of Metal Waste</h3>
+                            <p>Metal waste poses significant environmental consequences, primarily due to its potential
+                                to leach harmful substances into soil and water systems, leading to contamination and
+                                ecosystem disruption. Improper disposal of metal waste can result in the release of
+                                heavy metals such as lead, mercury, cadmium, and chromium, which are toxic to plants,
+                                animals, and humans. These contaminants can accumulate in the food chain, causing
+                                long-term health risks and biodiversity loss. Additionally, metal waste in landfills
+                                contributes to the generation of greenhouse gases, including methane, through anaerobic
+                                decomposition processes. The extraction and processing of metals from raw materials also
+                                contribute to habitat destruction, deforestation, and air pollution, further
+                                exacerbating environmental degradation.</p>
+                        </li>
+                        <li>
+                            <h3>Benefits of Recycling Metal</h3>
+                            <p>Recycling metal significantly reduces the demand for virgin metals, thus conserving
+                                natural resources and mitigating the environmental impact of mining activities, which
+                                often result in habitat destruction and air and water pollution. Moreover, recycling
+                                metal consumes less energy compared to primary metal production, leading to substantial
+                                energy savings and a reduction in greenhouse gas emissions. Economically, metal
+                                recycling creates jobs in the collection, processing, and manufacturing sectors,
+                                stimulating local economies and contributing to a more sustainable industrial ecosystem.
+                                Additionally, it provides a steady supply of raw materials for industries, reducing
+                                dependency on volatile global markets and enhancing supply chain resilience. Socially,
+                                metal recycling promotes community engagement and environmental stewardship by
+                                encouraging individuals and businesses to participate in waste reduction efforts.
+                                Overall, the practice of recycling metal embodies the principles of sustainability,
+                                circular economy, and responsible resource management, making it a crucial component of
+                                efforts to build a more resilient and equitable society.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques Section -->
+    <section id="techniques">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Techniques for Managing Metal Waste</h2>
+                    <ol>
+                        <li>
+                            <h3>An Overview of the Metal Recycling Process</h3>
+                            <p>Metal recycling involves the collection of scrap metal from various sources such as
+                                industrial sites, construction sites, and consumer products; sorting and separation of
+                                different types of metals using magnets, sensors, and manual labor; shredding or
+                                compacting the metal to reduce its size for easier handling and transportation; melting
+                                the metal in furnaces to remove impurities and shape it into ingots or billets; refining
+                                the melted metal to achieve desired quality standards; and finally, manufacturing new
+                                products using the recycled metal, thus completing the recycling loop and conserving
+                                valuable resources while reducing energy consumption and environmental impact.</p>
+                        </li>
+                        <li>
+                            <h3>Advantages of Reusing Metals</h3>
+                            <p>The practice of recycling metals provides a multitude of advantages for both the
+                                environment and the economy. It aids in the preservation of natural resources, demands
+                                less energy and results in fewer greenhouse gas emissions, reduces waste and pollution,
+                                generates employment opportunities, fosters economic expansion, and encourages the
+                                adoption of sustainable resource management techniques.</p>
+                        </li>
+                        <li>
+                            <h3>Composting Metal as an Alternative Disposal Method</h3>
+                            <p>Composting metal waste is not recommended since metals do not decompose like organic
+                                matter, and can contaminate the composting process. The presence of metals in compost
+                                can harm soil health and plant growth, and inhibit the activity of beneficial
+                                microorganisms. Composting metal waste can also cause the leaching of toxic substances
+                                into the environment, compromising soil and water quality. Therefore, alternative
+                                disposal methods like recycling, proper disposal at specialized facilities, and
+                                pollution prevention measures are necessary to minimize the environmental impact of
+                                metal waste.</p>
+                        </li>
+                        <li>
+                            <h3>Solutions for Reducing Metal Waste through Smart Packaging</h3>
+                            <p>Smart packaging solutions can significantly reduce metal waste by optimizing packaging
+                                design, materials, and processes. Using lightweight, eco-friendly materials like
+                                recycled aluminium or biodegradable alloys, along with features like tamper-evident
+                                seals and portion control mechanisms, can reduce metal waste. Implementing recyclable
+                                and compostable packaging options encourages consumers to participate in recycling
+                                programs and divert metal waste from landfills. Using RFID tags and QR codes can track
+                                packaging materials for better recycling and waste management. Collaborating with
+                                stakeholders promotes sustainable packaging practices and minimizes metal waste.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Best Practices</h2>
+                    <ol>
+                        <li>
+                            <h3>Tips and Suggestions for Individuals and Businesses on Effective Metal Waste Management
+                            </h3>
+                            <p>Prioritize metal recycling by segregating scrap metal from other waste streams. Locate
+                                nearby recycling centers or scrap yards to dispose of metal waste properly. Consider
+                                donating or selling reusable metal items rather than discarding them. Implement waste
+                                reduction strategies such as reusing metal containers or opting for durable,
+                                long-lasting products. Educate employees and stakeholders about the importance of metal
+                                waste management and recycling practices. Regularly assess and optimize metal waste
+                                management processes to minimize environmental impact and maximize resource efficiency.
+                            </p>
+                        </li>
+                        <li>
+                            <h3>Examples of Sustainable Practices for Reducing, Reusing, and Recycling Metals</h3>
+                            <ol type="a">
+                                <li>Reducing: Minimizing metal usage through lightweight and durable materials, reducing
+                                    scrap generation, and lean manufacturing.</li>
+                                <li>Reusing: Refurbish and repair metal items to extend their lifespan. Repurpose them
+                                    for artistic sculptures, storage, or decoration.</li>
+                                <li>Recycling: Investing in metal recovery technologies, implementing recycling
+                                    programs, raising awareness for metal recycling, and sourcing recycled metals from
+                                    suppliers.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Conclusion</h2>
+                    <p>The key points discussed emphasize the importance of responsible metal waste management for
+                        environmental sustainability:</p>
+                    <ol>
+                        <li>Environmental Impact: Improper disposal of metal waste can cause environmental pollution,
+                            soil and water contamination, and risk to ecosystems and human health. Metal waste in
+                            landfills contributes to greenhouse gas emissions through anaerobic decomposition.</li>
+                        <li>Resource Depletion: Recycling metal waste conserves natural resources, reduces the need for
+                            new mining, and mitigates environmental degradation associated with resource extraction.
+                        </li>
+                        <li>Energy Savings: Recycling metal waste uses much less energy than producing new metals from
+                            raw materials. For example, recycling aluminium needs just 5% of the energy required to make
+                            it from bauxite ore. This reduces greenhouse gas emissions and helps fight climate change.
+                        </li>
+                        <li>Economic Value: Metal waste can be recycled and reused, which generates economic
+                            opportunities through job creation, revenue generation, and cost savings for businesses.
+                        </li>
+                        <li>Circular Economy: Metal recycling is important for a circular economy, where materials are
+                            reused and recycled to minimize waste and maximize resource efficiency. This creates a
+                            sustainable and resilient economy that reduces dependence on finite resources and minimizes
+                            environmental impacts.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

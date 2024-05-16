@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Waste Classification Using Deep Learning</title>
+
+    <style>
+        .passport-photo {
+            width: 100px;
+            height: 120px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top"
+        style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Waste Classification Using Deep Learning</a>
+            <div class="d-flex justify-content-end">
+                <a class="nav-link text-white" href="/upload">Predict Garbage</a>
+                <a class="nav-link text-white" href="{{ url_for('generate_image')}}">Generate AI Image</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Carousel -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner"> <!-- Adjusted height -->
+            <div class="carousel-item active">
+                <img src="../static/1.jpg" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Piled High, Hope Low: Garbage Mismanagement Unleashes Environmental Woes</h5>
+                    <p>Improper disposal pollutes our planet, threatening ecosystems and endangering future generations.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../static/2.jpg" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Trash Talk: The Silent Menace of Improper Waste Disposal</h5>
+                    <p>Neglected trash accumulates, poisoning land, water, and air, silently eroding the health of our communities.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../static/3.jpg" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Waste Mismanagement: A Global Dilemma We Can No Longer Ignore</h5>
+                    <p>From overflowing landfills to littered oceans, the consequences of careless disposal reverberate worldwide, demanding urgent action.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Introduction</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="../static/4.jpg" class="img-fluid rounded mt-4 ms-5" alt="...">
+                </div>
+                <div class="col-lg-6">
+                    <p>Our project aims to revolutionize waste sorting processes by employing state-of-the-art deep
+                        learning algorithms. By leveraging convolutional neural networks (CNNs) and advanced machine
+                        learning methodologies, we have developed a robust system capable of accurately classifying
+                        different types of waste materials.</p>
+                    <p>Through extensive training on diverse datasets comprising various waste items, our deep learning
+                        model has been fine-tuned to recognize and categorize different waste materials with high
+                        precision. This model not only identifies common waste categories such as paper, plastic, glass,
+                        and metal but also distinguishes between different subtypes within each category.</p>
+                    <p>Furthermore, our project incorporates real-time processing capabilities, allowing for swift and
+                        efficient waste classification on-site. By integrating our deep learning model into existing
+                        waste sorting infrastructure or deploying it in standalone systems, we aim to streamline waste
+                        management operations and enhance recycling efforts.</p>
+                    <p>Moreover, our project emphasizes sustainability and environmental conservation by promoting
+                        proper waste segregation and recycling practices. By automating the classification process, we
+                        seek to minimize human error and optimize resource utilization, contributing to a cleaner and
+                        greener future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5 bg-light text-dark">
+        <div class="container">
+            <h2 class="text-center mb-4">Project Overview</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>Objectives:
+                        Our project aims to develop a robust waste classification model capable of accurately
+                        identifying and sorting different types of waste materials. By leveraging deep learning
+                        techniques, we seek to improve efficiency, reduce contamination, and promote recycling efforts.
+                    </p>
+                    <p>Methodology:
+                        We employ state-of-the-art deep learning algorithms, including convolutional neural networks
+                        (CNNs), to train our waste classification model. By feeding it with diverse datasets and
+                        fine-tuning its parameters, we ensure optimal performance and accuracy in waste identification.
+                    </p>
+                    <p>Dataset:
+                        Our model is trained on extensive datasets comprising various waste items, sourced from
+                        recycling facilities, waste management companies, and environmental organizations. We
+                        meticulously curated and annotated these datasets to facilitate effective model training.</p>
+                    <p>Model Architecture:
+                        The neural network architecture of our waste classification model is designed to analyze image
+                        inputs and classify waste materials into predefined categories. Through multiple layers of
+                        convolution and pooling, the model extracts meaningful features and makes accurate predictions.
+                    </p>
+                    <p>Training Process:
+                        We employ rigorous training methodologies, including data augmentation, batch normalization, and
+                        dropout regularization, to enhance the generalization and robustness of our model. By
+                        continuously monitoring performance metrics and adjusting model parameters, we ensure optimal
+                        training outcomes.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../static/5.png" class="img-fluid rounded mt-5" alt="...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Features/Benefits</h2>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="../static/12.jpeg" class="img-fluid rounded" alt="...">
+                </div>
+                <div class="col-lg-8">
+                    <p>Efficiency:
+                        Our waste classification model offers unparalleled efficiency and accuracy compared to
+                        traditional manual sorting methods. By automating the classification process, we significantly
+                        reduce labor costs and processing time, thereby optimizing resource utilization.</p>
+                    <p>Real-time Processing:
+                        With real-time processing capabilities, our model enables swift and efficient waste
+                        classification on-site. Whether deployed in recycling plants, waste sorting facilities, or
+                        community centers, our model enhances operational efficiency and streamlines waste management
+                        processes.</p>
+                    <p>Sustainability:
+                        By promoting proper waste segregation and recycling practices, our model contributes to
+                        sustainability and environmental conservation efforts. By diverting recyclable materials from
+                        landfills and reducing contamination rates, we help preserve natural resources and mitigate
+                        environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light text-dark">
+        <div class="container">
+            <h2 class="text-center mb-4">Applications</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>Industrial Use:
+                        Our waste classification model has diverse applications in industrial settings, including waste
+                        processing facilities, recycling plants, and manufacturing industries. By automating the sorting
+                        process, we enhance operational efficiency and maximize recycling rates, leading to cost savings
+                        and environmental benefits.</p>
+                    <p>Community Impact:
+                        At the community level, our model empowers individuals and organizations to adopt sustainable
+                        waste management practices. Whether in residential neighborhoods, schools, or public spaces, our
+                        model promotes awareness and facilitates responsible waste disposal, fostering a culture of
+                        environmental stewardship.</p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="../static/13.png" class="img-fluid rounded" alt="...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

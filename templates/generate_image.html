@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate AI Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .content {
+            text-align: center;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 48px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        form {
+            animation: fadeIn 1s ease-out;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: background-color 0.3s;
+            animation: pulse 1s infinite;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="bg-video">
+        <source src="{{ url_for('static', filename='apple_airpods_quiet_the_noise (1080p) (online-video-cutter.com).mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <h1 class="animate__animated animate__fadeInDown">Generate AI Image</h1>
+        <form method="post" action="{{ url_for('generate_image') }}" class="animate__animated animate__fadeIn">
+            <label for="prompt">Enter a prompt for the image:</label>
+            <input type="text" id="prompt" name="prompt" required>
+            <br>
+            <button type="submit" class="animate__animated animate__pulse animate__infinite">Generate Image</button>
+        </form>
+    </div>
+</body>
+</html>
